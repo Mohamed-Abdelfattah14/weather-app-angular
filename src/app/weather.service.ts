@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WeatherService {
-
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getWeather(location: any) {
-    return this.http.get(`http://api.weatherstack.com/current?access_key=1b8c5444ddf53e87d2f0c69202e4027e&query=${location}`);
+    return this.http.get(`
+    https://api.weatherapi.com/v1/current.json?key=bce23efcff794dbbbc9163632212703&q=${location}`);
   }
 }

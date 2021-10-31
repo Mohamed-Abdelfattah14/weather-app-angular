@@ -16,17 +16,17 @@
                 <div class="card m-auto" *ngIf="weatherData">
                     <h2 class="card-title">{{weatherData.location.name}} , {{weatherData.location.country}}</h2>
                     <div class="imgData">
-                        <img src={{weatherData.current.weather_icons[0]}} class="img" alt="..." />
-                        <h3 class="temp">{{weatherData.current.temperature}} &#8451;</h3>
+                        <img src={{weatherData.current.condition.icon}} class="img" alt="..." />
+                        <h3 class="temp">{{weatherData.current.temp_c}} &#8451;</h3>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" style="font-size: 25px;">{{weatherData.current.weather_descriptions[0]}}</li>
+                        <li class="list-group-item" style="font-size: 25px;">{{weatherData.current.condition.text}}</li>
                         <li class="list-group-item">Time : {{weatherData.location.localtime}}</li>
-                        <li class="list-group-item">Wind Speed : {{weatherData.current.wind_speed}} km/h</li>
+                        <li class="list-group-item">Wind Speed : {{weatherData.current.wind_kph}} km/h</li>
                         <li class="list-group-item">Wind Degree : {{weatherData.current.wind_degree}} &deg;
                             {{weatherData.current.wind_dir}}</li>
-                        <li class="list-group-item">Pressure : {{weatherData.current.pressure}} bar</li>
-                        <li class="list-group-item">Feels like : {{weatherData.current.feelslike}} &#8451;</li>
+                        <li class="list-group-item">Pressure : {{weatherData.current.pressure_mb}} millibar</li>
+                        <li class="list-group-item">Feels like : {{weatherData.current.feelslike_c}} &#8451;</li>
                     </ul>
                 </div>
             </div>
